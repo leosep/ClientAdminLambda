@@ -1,0 +1,26 @@
+{
+  "Information": [
+    "This file is used to configure AWS Lambda deployment and settings for your serverless application."
+  ],
+  "Profile": "default",
+  "Region": "us-east-1",
+  "FunctionName": "ClientAdminLambdaFunction",
+  "FunctionMemorySize": 128,
+  "FunctionTimeout": 30,
+  "FunctionHandler": "ClientAdminLambda::ClientAdminLambda.Function::FunctionHandler",
+  "FunctionRole": "arn:aws:iam::123456789012:role/lambda-role",
+  "Publish": false,
+  "PackageType": "Zip",
+  "DeploymentBucket": "my-deployment-bucket",
+  "EnvironmentVariables": [
+    {
+      "Key": "DYNAMODB_TABLE_NAME",
+      "Value": "ClientsTable"
+    },
+    {
+      "Key": "REDIS_HOST",
+      "Value": "your-redis-endpoint"
+    }
+  ],
+  "UsePreviousDeployment": false
+}
